@@ -40,7 +40,9 @@ public class Array<T> {
             this.resizeMemory((int) (this._memorySize * this._expansionFactor));
         }
         this._array[index] = value;
-        this._size += 1;
+        if(index >= this._size) {
+            this._size += 1;
+        }
     }
 
     public T get(int index) {

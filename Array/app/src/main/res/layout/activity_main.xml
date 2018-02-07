@@ -52,6 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
+            android:hint="значение"
             android:inputType="textPersonName" />
 
         <EditText
@@ -60,6 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
+            android:hint="индекс"
             android:inputType="textPersonName" />
 
         <Button
@@ -111,20 +113,23 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
+            android:hint="память"
             android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/buttonCapacity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="Изменить" />
 
         <CheckBox
             android:id="@+id/checkBoxAutoresize"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:checked="true" />
+            android:checked="true"
+            android:text="авторесайз" />
 
     </LinearLayout>
 

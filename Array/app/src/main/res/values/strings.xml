@@ -3,7 +3,7 @@
     <string name="editTextIndexHint">Индекс</string>
     <string name="editTextValueHint">Значение</string>
     <string name="buttonAdd">Добавить</string>
-    <string name="textViewCapacity6Text">Память</string>
+    <string name="textViewCapacity6Text">Память:</string>
     <string name="TextView3Text">размер:</string>
     <string name="buttonExecuteText">выполнить</string>
     <string name="radioButtonAdd">добавить</string>

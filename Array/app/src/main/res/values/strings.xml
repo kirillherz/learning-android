@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Array</string>
+    <string name="editTextIndexHint">Индекс</string>
+    <string name="editTextValueHint">Значение</string>
+    <string name="buttonAdd">Добавить</string>
+    <string name="textViewCapacity6Text">Память</string>
+    <string name="TextView3Text">размер:</string>
+    <string name="buttonExecuteText">выполнить</string>
+    <string name="radioButtonAdd">добавить</string>
+    <string name="radioButtonChangeText">изменить</string>
+    <string name="radioButtonDelete">удалить</string>
+</resources>

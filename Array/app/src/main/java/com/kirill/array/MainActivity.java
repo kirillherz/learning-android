@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         textViewSize.setText(String.valueOf(array.getSize()));
         editTextIndex.setText(String.valueOf(index + 1));
         editTextValue.setText("");
-        editTextValue.setFoc
         // textViewResult.setText("Добавлено значение: " + value + "\nпо индексу: " + value);
     }
 }

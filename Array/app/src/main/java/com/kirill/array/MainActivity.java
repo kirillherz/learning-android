@@ -31,18 +31,19 @@ public class MainActivity extends AppCompatActivity {
         buttonCapacity = (Button) findViewById(R.id.buttonCapacity);
         buttonExecute = (Button) findViewById(R.id.buttonExecute);
         array = new Array<>();
-        textViewSize.setText(array.getSize());
-        textViewCapacity.setText(array.getMemorySize());
+        textViewSize.setText(String.valueOf(array.getSize()));
+        textViewCapacity.setText(String.valueOf(array.getMemorySize()));
     }
 
     public void buttonExecuteOnClick(View view) {
         int index = Integer.parseInt(editTextIndex.getText().toString());
         String value = editTextValue.getText().toString();
         array.add(index, value);
-        textViewCapacity.setText(array.getMemorySize());
-        textViewSize.setText(array.getSize());
-        editTextIndex.setText(index + 1);
+        textViewCapacity.setText(String.valueOf(array.getMemorySize()));
+        textViewSize.setText(String.valueOf(array.getSize()));
+        editTextIndex.setText(String.valueOf(index + 1));
         editTextValue.setText("");
+        editTextValue.setFoc
         // textViewResult.setText("Добавлено значение: " + value + "\nпо индексу: " + value);
     }
 }

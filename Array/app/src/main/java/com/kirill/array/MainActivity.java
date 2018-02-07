@@ -8,15 +8,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    TextView textViewCapacity = (TextView) findViewById(R.id.textViewCapacity);
-    TextView textViewSize = (TextView) findViewById(R.id.textViewSize);
-    TextView textViewResult = (TextView) findViewById(R.id.textViewResult);
-    EditText editTextCapacity = (EditText) findViewById(R.id.editTextCapacity);
-    EditText editTextIndex = (EditText) findViewById(R.id.editTextIndex);
-    EditText editTextValue = (EditText) findViewById(R.id.editTextValue);
-    Button buttonCapacity = (Button) findViewById(R.id.buttonCapacity);
-    Button buttonExecute = (Button) findViewById(R.id.buttonExecute);
-    Array<String> array = new Array<>();
+    TextView textViewCapacity;
+    TextView textViewSize;
+    TextView textViewResult;
+    EditText editTextCapacity;
+    EditText editTextIndex;
+    EditText editTextValue;
+    Button buttonCapacity;
+    Button buttonExecute;
+    Array<String> array;
 
 
     @Override
@@ -43,6 +43,6 @@ public class MainActivity extends AppCompatActivity {
         textViewSize.setText(array.getSize());
         editTextIndex.setText(index + 1);
         editTextValue.setText("");
-       // textViewResult.setText("Добавлено значение: " + value + "\nпо индексу: " + value);
+        // textViewResult.setText("Добавлено значение: " + value + "\nпо индексу: " + value);
     }
 }

@@ -67,6 +67,12 @@ public class Array<T> {
     }
 
     public T get(int index) {
-        return (T) this._array[index];
+        T item;
+        if ((index >= this._size) || (index < 0)) {
+            throw new ArrayIndexOutOfBoundsException();
+        } else {
+            item = (T) this._array[index];
+        }
+        return item;
     }
 }

@@ -110,6 +110,22 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void show(View view){
+        try {
+            int index = Integer.parseInt(editTextIndex.getText().toString());
+            String value = array.get(index);
+            textViewResult.setTextColor(Color.GREEN);
+            textViewResult.setText("значение: " + value + "\nпо индексу: " + index);
+            update();
+        } catch (NumberFormatException e) {
+            textViewResult.setTextColor(Color.RED);
+            textViewResult.setText("Вы ввели неккоректный индекс");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            textViewResult.setTextColor(Color.RED);
+            textViewResult.setText("Вы вышли за границы массива");
+        }
+    }
+
     public void dispatchOnClick(View view) {
         switch (radioGroup.getCheckedRadioButtonId()) {
             case R.id.radioButtonAdd:
@@ -117,6 +133,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.radioButtonDelete:
                 delete(view);
+                break;
+            case R.id.radioButtonChange:
+                show(view);
                 break;
             default:
                 break;

@@ -79,27 +79,34 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/radioButtonAdd"
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:checked="true"
-            android:text="@string/radioButtonAdd" />
+            android:layout_weight="1" >
 
-        <RadioButton
-            android:id="@+id/radioButtonChange"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/radioButtonChangeText" />
+            <RadioButton
+                android:id="@+id/radioButtonAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/radioButtonAdd" />
 
-        <RadioButton
-            android:id="@+id/radioButtonDelete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/radioButtonDelete" />
+            <RadioButton
+                android:id="@+id/radioButtonDelete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/radioButtonDelete" />
+
+            <RadioButton
+                android:id="@+id/radioButtonChange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/radioButtonChangeText" />
+        </RadioGroup>
+
     </LinearLayout>
 
     <LinearLayout

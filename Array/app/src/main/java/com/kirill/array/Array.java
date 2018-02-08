@@ -35,12 +35,12 @@ public class Array<T> {
         this._array = newArray;
     }
 
-    public void add(int index, T value) throws IndexOutOfBoundsException {
+    public void add(int index, T value) throws ArrayIndexOutOfBoundsException {
         if (index >= this._memorySize) {
             this.resizeMemory((int) (this._memorySize * this._expansionFactor));
         }
         if (index > this._size) {
-            throw new IndexOutOfBoundsException();
+            throw new ArrayIndexOutOfBoundsException();
         }
         this._array[index] = value;
         if (index >= this._size) {
@@ -49,9 +49,11 @@ public class Array<T> {
     }
 
     public T delete(int index) throws ArrayIndexOutOfBoundsException{
-        T item = (T) this._array[index];
-        if (index >= this._size) {
-            throw new IndexOutOfBoundsException();
+        T item;
+        if ((index >= this._size) || (index < 0)) {
+            throw new ArrayIndexOutOfBoundsException();
+        }else{
+            item = (T) this._array[index];
         }
         if ((index == 0) && (this._size == 1)) {
             this._size = 0;

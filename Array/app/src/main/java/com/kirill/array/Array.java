@@ -35,12 +35,15 @@ public class Array<T> {
         this._array = newArray;
     }
 
-    public void add(int index, T value) {
+    public void add(int index, T value) throws IndexOutOfBoundsException {
         if (index >= this._memorySize) {
             this.resizeMemory((int) (this._memorySize * this._expansionFactor));
         }
+        if (index > this._size) {
+            throw new IndexOutOfBoundsException();
+        }
         this._array[index] = value;
-        if(index >= this._size) {
+        if (index >= this._size) {
             this._size += 1;
         }
     }

@@ -48,6 +48,22 @@ public class Array<T> {
         }
     }
 
+    public T delete(int index) {
+        T item = (T) this._array[index];
+        if (index >= this._size) {
+            throw new IndexOutOfBoundsException();
+        }
+        if ((index == 0) && (this._size == 1)) {
+            this._size = 0;
+        } else {
+            for (int i = index; i != this._size - 1; i++) {
+                this._array[i] = this._array[i + 1];
+            }
+        }
+        this._size -= 1;
+        return item;
+    }
+
     public T get(int index) {
         return (T) this._array[index];
     }

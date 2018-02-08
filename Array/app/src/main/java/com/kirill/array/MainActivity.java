@@ -25,14 +25,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         textViewCapacity = (TextView) findViewById(R.id.textViewCapacity);
         textViewSize = (TextView) findViewById(R.id.textViewSize);
+        textViewResult = (TextView)findViewById(R.id.textViewResult);
         editTextCapacity = (EditText) findViewById(R.id.editTextCapacity);
         editTextIndex = (EditText) findViewById(R.id.editTextIndex);
         editTextValue = (EditText) findViewById(R.id.editTextValue);
         buttonCapacity = (Button) findViewById(R.id.buttonCapacity);
         buttonExecute = (Button) findViewById(R.id.buttonExecute);
         array = new Array<>();
-        textViewSize.setText(String.valueOf(array.getSize()));
+
         textViewCapacity.setText(String.valueOf(array.getMemorySize()));
+        textViewSize.setText(String.valueOf(array.getSize()));
     }
 
     public void buttonExecuteOnClick(View view) {
@@ -43,6 +45,6 @@ public class MainActivity extends AppCompatActivity {
         textViewSize.setText(String.valueOf(array.getSize()));
         editTextIndex.setText(String.valueOf(index + 1));
         editTextValue.setText("");
-        // textViewResult.setText("Добавлено значение: " + value + "\nпо индексу: " + value);
+        textViewResult.setText("Добавлено значение: " + value + "\nпо индексу: " + index);
     }
 }

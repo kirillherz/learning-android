@@ -48,7 +48,7 @@ public class Array<T> {
         }
     }
 
-    public T delete(int index) {
+    public T delete(int index){
         T item = (T) this._array[index];
         if (index >= this._size) {
             throw new IndexOutOfBoundsException();
@@ -59,8 +59,8 @@ public class Array<T> {
             for (int i = index; i != this._size - 1; i++) {
                 this._array[i] = this._array[i + 1];
             }
+            this._size -= 1;
         }
-        this._size -= 1;
         return item;
     }
 

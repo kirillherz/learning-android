@@ -48,7 +48,7 @@ public class Array<T> {
         }
     }
 
-    public T delete(int index){
+    public T delete(int index) throws ArrayIndexOutOfBoundsException{
         T item = (T) this._array[index];
         if (index >= this._size) {
             throw new IndexOutOfBoundsException();

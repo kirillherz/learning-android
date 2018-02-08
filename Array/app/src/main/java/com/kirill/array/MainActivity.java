@@ -96,10 +96,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void delete(View view) {
         int index = Integer.parseInt(editTextIndex.getText().toString());
-        String value = array.delete(index);
-        textViewResult.setTextColor(Color.GREEN);
-        textViewResult.setText("Удалено значение: " + value + "\nпо индексу: " + index);
-        update();
+        try {
+            String value = array.delete(index);
+            textViewResult.setTextColor(Color.GREEN);
+            textViewResult.setText("Удалено значение: " + value + "\nпо индексу: " + index);
+            update();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            textViewResult.setTextColor(Color.RED);
+            textViewResult.setText("Вы вышли за границы массива");
+        }
     }
 
     public void dispatchOnClick(View view) {

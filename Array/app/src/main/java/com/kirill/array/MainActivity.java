@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editTextValue;
     Button buttonCapacity;
     Button buttonExecute;
+    ProgressBar progressBarCapacity;
     Array<String> array;
 
 
@@ -25,24 +27,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         textViewCapacity = (TextView) findViewById(R.id.textViewCapacity);
         textViewSize = (TextView) findViewById(R.id.textViewSize);
-        textViewResult = (TextView)findViewById(R.id.textViewResult);
+        textViewResult = (TextView) findViewById(R.id.textViewResult);
         editTextCapacity = (EditText) findViewById(R.id.editTextCapacity);
         editTextIndex = (EditText) findViewById(R.id.editTextIndex);
         editTextValue = (EditText) findViewById(R.id.editTextValue);
         buttonCapacity = (Button) findViewById(R.id.buttonCapacity);
         buttonExecute = (Button) findViewById(R.id.buttonExecute);
+        progressBarCapacity = (ProgressBar) findViewById(R.id.progressBarCapacity);
         array = new Array<>();
+        update();
 
+    }
+
+    public void update() {
         textViewCapacity.setText(String.valueOf(array.getMemorySize()));
         textViewSize.setText(String.valueOf(array.getSize()));
+        progressBarCapacity.setMax(array.getMemorySize());
+        progressBarCapacity.setProgress(array.getSize());
     }
+
 
     public void buttonExecuteOnClick(View view) {
         int index = Integer.parseInt(editTextIndex.getText().toString());
         String value = editTextValue.getText().toString();
         array.add(index, value);
-        textViewCapacity.setText(String.valueOf(array.getMemorySize()));
-        textViewSize.setText(String.valueOf(array.getSize()));
+        update();
         editTextIndex.setText(String.valueOf(index + 1));
         editTextValue.setText("");
         textViewResult.setText("Добавлено значение: " + value + "\nпо индексу: " + index);

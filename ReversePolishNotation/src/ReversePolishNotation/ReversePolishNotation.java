@@ -4,8 +4,38 @@
  * and open the template in the editor.
  */
 package ReversePolishNotation;
+
+enum Type{
+    OPERAND,
+    OPERATION,
+    OPENBRACKET,
+    CLOSEBRACKET,
+    ERRORS
+}
 public class ReversePolishNotation {
  
     public static void main(String[] args) {
+
+       String s = "2*a+(2+5)";
+       Reader reader = new Reader(s);
+       Type t;
+       for(int i = 0; i != s.length();i++){
+           t = reader.read();
+           switch(t){
+               case OPERAND:
+                   System.out.print("o");
+                   break;
+               case OPERATION:
+                   System.out.print("+");
+                   break;
+               case OPENBRACKET:
+                   System.out.print("(");
+                   break;
+               case CLOSEBRACKET:
+                   System.out.print(")");
+                   break;
+                   
+           }
+       }
     }
 }

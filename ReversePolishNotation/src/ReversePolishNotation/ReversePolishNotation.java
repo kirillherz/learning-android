@@ -17,10 +17,10 @@ public class ReversePolishNotation {
     public static void main(String[] args) {
 
        String s = "2*a+(2+5)";
-       Reader reader = new Reader(s);
+       Reader reader = new Reader();
        Type t;
        for(int i = 0; i != s.length();i++){
-           t = reader.read();
+           t = reader.read(s.charAt(i));
            switch(t){
                case OPERAND:
                    System.out.print("o");

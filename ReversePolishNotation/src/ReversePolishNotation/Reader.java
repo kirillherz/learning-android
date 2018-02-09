@@ -11,27 +11,25 @@ import java.util.regex.Pattern;
 
 public class Reader {
 
-    String string;
+ 
     Pattern patternOperand;
     Pattern patternOperation;
     Pattern patternOpenBracket;
     Pattern patternCloseBracket;
-    int index;
 
-    Reader(String string) {
-        this.string = string;
+    Reader() {
         this.patternOperand = Pattern.compile("^[0-9a-z]$");
         this.patternOperation = Pattern.compile("^[\\Q+-*/\\E]$");
         this.patternOpenBracket = Pattern.compile("^[(]$");
         this.patternCloseBracket = Pattern.compile("^[)]$");
-        this.index = 0;
+ 
 
     }
 
-    public Type read() {
+    public Type read(char c) {
         Matcher m;
         Type t;
-        String cs = new Character(this.string.charAt(index)).toString();
+        String cs = new Character(c).toString();
         this.patternOperand.matcher(cs);
         if (this.patternOperand.matcher(cs).matches()) {
             t = Type.OPERAND;
@@ -44,7 +42,6 @@ public class Reader {
         } else {
             t = Type.ERRORS;
         }
-        this.index += 1;
         return t;
     }
 }

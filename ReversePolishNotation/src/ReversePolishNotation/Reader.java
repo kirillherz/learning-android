@@ -11,7 +11,6 @@ import java.util.regex.Pattern;
 
 public class Reader {
 
- 
     Pattern patternOperand;
     Pattern patternOperation;
     Pattern patternOpenBracket;
@@ -22,11 +21,9 @@ public class Reader {
         this.patternOperation = Pattern.compile("^[\\Q+-*/\\E]$");
         this.patternOpenBracket = Pattern.compile("^[(]$");
         this.patternCloseBracket = Pattern.compile("^[)]$");
- 
 
     }
 
-    public Type read(char c) {
     public int getPriority(char c) {
         int priority = -1;
         switch (c) {
@@ -51,6 +48,7 @@ public class Reader {
         return priority;
     }
 
+    public Type getTypeSymbol(char c) {
         Matcher m;
         Type t;
         String cs = new Character(c).toString();

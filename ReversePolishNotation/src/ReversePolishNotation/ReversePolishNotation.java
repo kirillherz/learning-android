@@ -20,7 +20,7 @@ public class ReversePolishNotation {
        Reader reader = new Reader();
        Type t;
        for(int i = 0; i != s.length();i++){
-           t = reader.read(s.charAt(i));
+           t = reader.getTypeSymbol(s.charAt(i));
            switch(t){
                case OPERAND:
                    System.out.print("o");

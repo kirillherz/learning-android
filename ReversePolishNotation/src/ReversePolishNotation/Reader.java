@@ -27,6 +27,30 @@ public class Reader {
     }
 
     public Type read(char c) {
+    public int getPriority(char c) {
+        int priority = -1;
+        switch (c) {
+            case ')':
+                priority = 0;
+                break;
+            case '+':
+            case '-':
+                priority = 1;
+                break;
+            case '*':
+            case '/':
+                priority = 2;
+                break;
+            case '^':
+                priority = 3;
+                break;
+            case '(':
+                priority = 4;
+                break;
+        }
+        return priority;
+    }
+
         Matcher m;
         Type t;
         String cs = new Character(c).toString();

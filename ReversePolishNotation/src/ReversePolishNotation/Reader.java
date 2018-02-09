@@ -18,7 +18,7 @@ public class Reader {
 
     Reader() {
         this.patternOperand = Pattern.compile("^[0-9a-z]$");
-        this.patternOperation = Pattern.compile("^[\\Q+-*/\\E]$");
+        this.patternOperation = Pattern.compile("^[\\Q+^-*/\\E]$");
         this.patternOpenBracket = Pattern.compile("^[(]$");
         this.patternCloseBracket = Pattern.compile("^[)]$");
 
@@ -28,8 +28,9 @@ public class Reader {
         int priority = -1;
         switch (c) {
             case ')':
+            case '(':
                 priority = 0;
-                break;
+             break;
             case '+':
             case '-':
                 priority = 1;
@@ -41,9 +42,7 @@ public class Reader {
             case '^':
                 priority = 3;
                 break;
-            case '(':
-                priority = 4;
-                break;
+
         }
         return priority;
     }
